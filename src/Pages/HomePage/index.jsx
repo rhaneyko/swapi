@@ -38,11 +38,7 @@ const HomePage = () => {
            <Title>Characters</Title>
           <Line/>
         </HeaderCharacters>
-        <CarouselSlide
-          itemsToShow={3}
-          itemsToScroll={3}
-          
-        >
+        <CarouselSlide>
           <CharactersMovie/>
           <CharactersMovie/>
           <CharactersMovie/>

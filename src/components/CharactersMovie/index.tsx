@@ -1,8 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react'
 
-import episode_1 from '../../assets/episode_1.jpg'
-
-import movies from '../../assets/data/movies.json'
+import characters from '../../assets/data/characters.json'
 
 import {
    Container,
@@ -21,6 +19,7 @@ const CardMovie = () => {
                 <DescriptionMovie>
                     <BirthDate>
                       Data de Nascimento
+                      <p></p>
                     </BirthDate>
                     <Height>
                       Altura

@@ -35,7 +35,6 @@ export const Line = styled.div`
 
 export const Title = styled.p`
    font-size: 24px;
-   font-weight: 600;
 `;
 
 export const CarouselSlide = styled(Carousel)`
