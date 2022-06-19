@@ -6,7 +6,7 @@ export const Container = styled.div`
     align-items: center;
 `;
 
-export const Card = styled.div`
+export const CardCharacters = styled.div`
     width: 268px;
     height: 140px;
 
