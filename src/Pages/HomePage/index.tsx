@@ -29,7 +29,6 @@ import episode_5 from '../../assets/img/episode_5.jpg'
 import episode_6 from '../../assets/img/episode_6.jpg'
 
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
-import { Carousel } from 'react-responsive-carousel'
 const HomePage = () => {
   const [ movies, setMovies ] = useState<any[]>([]);
   const [ characters, setCharacters ] = useState<any[]>([]);
@@ -57,11 +56,8 @@ const HomePage = () => {
            <Title>Movies</Title>
           <Line/>
         </HeaderMovies>
-
+        
         <CardsMovie>
-        <Carousel
-          showArrows={true}
-        >  
           {movies.map(movie => (
             <CardMovie key={movie.episode_id}>
               <ImageMovie src={movie.episode_id === 1 ? episode_1 : movie.episode_id === 2 ? episode_2 : movie.episode_id === 3 ? episode_3 : movie.episode_id === 4 ? episode_4 : movie.episode_id === 5 ? episode_5 : movie.episode_id === 6 ? episode_6 : ''} alt={movie.title}/>
@@ -70,14 +66,12 @@ const HomePage = () => {
                 <p>
                 <ReleaseDate>Data de lançamento</ReleaseDate> {movie.release_date}<br />
                 <Producer>Diretor</Producer> {movie.director}<br />
-                
                 </p>
               </DescriptionMovie>
               </CardMovie>
           ))}
-        </Carousel>
         </CardsMovie> 
-        <HeaderCharacters>
+        {/* <HeaderCharacters>
           <Line/>
            <Title>Characters</Title>
           <Line/>
@@ -97,7 +91,7 @@ const HomePage = () => {
               </CardCharacters>
             ))}
           </CardsCharacters>
-        
+         */}
     </Container> 
   )
 }
