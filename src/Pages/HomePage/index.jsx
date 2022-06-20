@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
-
+import CardMovie from '../../components/CardMovie'
 import { 
    Container,
    Title,
    HeaderMovies,
    CardsMovie,
-   CardMovie,
+   //CardMovie,
    ImageMovie,
    MovieName,
    DescriptionMovie,
@@ -28,10 +28,15 @@ import episode_4 from '../../assets/img/episode_4.webp'
 import episode_5 from '../../assets/img/episode_5.jpg'
 import episode_6 from '../../assets/img/episode_6.jpg'
 
-import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
+
+//import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
+
 const HomePage = () => {
-  const [ movies, setMovies ] = useState<any[]>([]);
-  const [ characters, setCharacters ] = useState<any[]>([]);
+  const [ movies, setMovies ] = useState([]);
+  const [ characters, setCharacters ] = useState([]);
+
+
+
   useEffect(function(){
     fetch('https://swapi.dev/api/films/')
     .then(filmsResponse => filmsResponse.json())
@@ -49,36 +54,40 @@ const HomePage = () => {
     })
 })
 
-  return (
+return (
     <Container>
         <HeaderMovies>
           <Line/>
            <Title>Movies</Title>
           <Line/>
         </HeaderMovies>
-        
         <CardsMovie>
           {movies.map(movie => (
             <CardMovie key={movie.episode_id}>
-              <ImageMovie src={movie.episode_id === 1 ? episode_1 : movie.episode_id === 2 ? episode_2 : movie.episode_id === 3 ? episode_3 : movie.episode_id === 4 ? episode_4 : movie.episode_id === 5 ? episode_5 : movie.episode_id === 6 ? episode_6 : ''} alt={movie.title}/>
+              <ImageMovie src={movie.episode_id === 1 ? episode_1 : movie.episode_id === 2 ? episode_2 : movie.episode_id === 3 ? episode_3 : movie.episode_id === 4 ? episode_4 : movie.episode_id === 5 ? episode_5 : episode_6} alt=""/>
               <MovieName>{movie.title}</MovieName>
               <DescriptionMovie>
                 <p>
-                <ReleaseDate>Data de lançamento</ReleaseDate> {movie.release_date}<br />
-                <Producer>Diretor</Producer> {movie.director}<br />
+                  <ReleaseDate>
+                     Data de lançamento 
+                  </ReleaseDate> {movie.release_date} {movie.release_date}<br/>
+                  <Producer>
+                    Produtor
+                  </Producer> {movie.producer}
                 </p>
               </DescriptionMovie>
-              </CardMovie>
+            </CardMovie>
           ))}
-        </CardsMovie> 
-        {/* <HeaderCharacters>
+                       
+        </CardsMovie>
+          
+        <HeaderCharacters>
           <Line/>
            <Title>Characters</Title>
           <Line/>
         </HeaderCharacters>
 
           <CardsCharacters>
-            
             {characters.map(character => (
               <CardCharacters key={character.name}>
                 <ActorName>{character.name}</ActorName>
@@ -91,7 +100,6 @@ const HomePage = () => {
               </CardCharacters>
             ))}
           </CardsCharacters>
-         */}
     </Container> 
   )
 }

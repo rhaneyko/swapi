@@ -7,7 +7,6 @@ export const Container = styled.div`
 
    justify-content: center;
    align-items: center;
-   paddind-left: 30px;
 
    @media (max-width: 768px) {
       width: 100%;
@@ -33,7 +32,6 @@ export const Line = styled.div`
 
    margin: 15px;
 
-
    background-color: #000;
 `;
 
@@ -43,16 +41,14 @@ export const Title = styled.p`
 `;
 
 export const CardsMovie = styled.div`
-    display: flex;
-    flex-direction: row;
-
+    width: 100%;
 `;
 
 export const CardMovie = styled.div`
     width: 268px;
     height: 465px;
 
-    margin: 30px
+    margin-top: 30px;
 
     border: 1px solid rgba(207, 207, 207, 1);
     border-bottom-left-radius: 10px;

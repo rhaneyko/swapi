@@ -17,8 +17,6 @@ import episode_5 from '../../assets/img/episode_5.jpg'
 import episode_6 from '../../assets/img/episode_6.jpg'
 
 
-import {Carousel} from 'react-responsive-carousel'
-
 export default function CardMovie() {
   const [ moviesSW, setMoviesSW ] = useState<any[]>([]);
   useEffect(function(){
@@ -38,7 +36,6 @@ export default function CardMovie() {
                 <p>
                 <ReleaseDate>Data de lançamento</ReleaseDate> {movie.release_date}<br />
                 <Producer>Diretor</Producer> {movie.director}<br />
-                
                 </p>
               </DescriptionMovie>
               </Card>
