@@ -19,6 +19,7 @@ import episode_6 from '../../assets/img/episode_6.jpg'
 
 export default function CardMovie() {
   const [ moviesSW, setMoviesSW ] = useState<any[]>([]);
+  
   useEffect(function(){
     fetch('https://swapi.dev/api/films/')
     .then(filmsResponse => filmsResponse.json())
@@ -26,6 +27,7 @@ export default function CardMovie() {
       setMoviesSW(completeFilmsResponse.results)
     })
   })
+
   return(
       <Container>
           {moviesSW.map(movie => (

@@ -1,7 +1,7 @@
 import React, {Component, useEffect, useRef, useState} from 'react'
 
 
-import api from '../Api/api'
+
 import {
    Container,
    CardCharacters,
@@ -28,12 +28,7 @@ class CardMovie extends Component {
     state = {
         peoples: [],
     }
-    async componentDidMount(){
-        const response = await api.get('/people/')
-        
-
-        this.setState({peoples: response.data.results})
-    }
+    
     render(){
         const {peoples} = this.state
     return(
